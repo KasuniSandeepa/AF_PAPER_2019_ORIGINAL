@@ -43644,18 +43644,21 @@ var Rooms = /*#__PURE__*/function (_Component) {
 
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "container"
-      }, /*#__PURE__*/_react.default.createElement("h1", null, "All Rooms"), /*#__PURE__*/_react.default.createElement(_reactSelect.default, {
+      }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h1", null, "All Rooms")), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "Code",
+        className: "form-label"
+      }, "Select Rooms for Calculate Cost :"), /*#__PURE__*/_react.default.createElement(_reactSelect.default, {
         options: this.state.options,
         onChange: this.onRoomSelect,
         className: "basic-multi-select",
         isMulti: true
-      }), /*#__PURE__*/_react.default.createElement("button", {
+      }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
         type: "button",
         className: "btn btn-primary",
         onClick: function onClick(e) {
           return _this4.calculateCost(e);
         }
-      }, "Calculate"), this.state.rooms.length > 0 && this.state.rooms.map(function (item, index) {
+      }, "Calculate"), /*#__PURE__*/_react.default.createElement("br", null), this.state.rooms.length > 0 && this.state.rooms.map(function (item, index) {
         return /*#__PURE__*/_react.default.createElement("div", {
           key: index,
           className: "card mb-3"
@@ -43722,7 +43725,10 @@ var Navbar = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("nav", {
-        className: "navbar navbar-expand-lg navbar-light bg-primary"
+        className: "navbar navbar-expand-lg navbar-light",
+        style: {
+          backgroundColor: "#e3f2fd"
+        }
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "container-fluid"
       }, /*#__PURE__*/_react.default.createElement("a", {
@@ -53264,7 +53270,9 @@ var _default = (0, _styles.makeStyles)({
 });
 
 exports.default = _default;
-},{"@material-ui/core/styles":"node_modules/@material-ui/core/esm/styles/index.js"}],"node_modules/@material-ui/core/esm/colors/purple.js":[function(require,module,exports) {
+},{"@material-ui/core/styles":"node_modules/@material-ui/core/esm/styles/index.js"}],"src/components/Categories/hotels.jpg":[function(require,module,exports) {
+module.exports = "/hotels.78626f7d.jpg";
+},{}],"node_modules/@material-ui/core/esm/colors/purple.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -95286,6 +95294,8 @@ var _styles = _interopRequireDefault(require("./styles"));
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _hotels = _interopRequireDefault(require("./hotels.jpg"));
+
 var _core = require("@material-ui/core");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -95362,17 +95372,7 @@ var Categories = /*#__PURE__*/function (_Component) {
 
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "container"
-      }, /*#__PURE__*/_react.default.createElement("h1", null, "Categories"), this.state.categories.length > 0 && this.state.categories.map(function (item, index) {
-        return /*#__PURE__*/_react.default.createElement("div", {
-          key: index,
-          className: "card mb-3"
-        }, /*#__PURE__*/_react.default.createElement("div", {
-          className: "p-3",
-          onClick: function onClick(e) {
-            return _this3.navigateRoomPage(e, item._id);
-          }
-        }, /*#__PURE__*/_react.default.createElement("h4", null, "Category: ", item.name), /*#__PURE__*/_react.default.createElement("h5", null, "Description: ", item.description)));
-      }), /*#__PURE__*/_react.default.createElement("div", {
+      }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h1", null, "Categories")), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
         style: {
           display: "flex",
           flexWrap: "wrap"
@@ -95380,9 +95380,31 @@ var Categories = /*#__PURE__*/function (_Component) {
       }, this.state.categories.length > 0 && this.state.categories.map(function (item, index) {
         return /*#__PURE__*/_react.default.createElement("div", {
           key: index,
-          className: "card text-white bg-info",
+          className: "card mb-3",
           style: {
-            width: "18rem"
+            margin: "10px",
+            backgroundColor: "#e3f2fd"
+          }
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "p-3",
+          onClick: function onClick(e) {
+            return _this3.navigateRoomPage(e, item._id);
+          }
+        }, /*#__PURE__*/_react.default.createElement("h4", null, "Category: ", item.name), /*#__PURE__*/_react.default.createElement("h5", null, "Description: ", item.description)), /*#__PURE__*/_react.default.createElement("span", null, "\xA0\xA0\xA0"));
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        style: {
+          display: 'flex',
+          flexDirection: 'row'
+        }
+      }, this.state.categories.length > 0 && this.state.categories.map(function (item, index) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          key: index,
+          className: "card text-black ",
+          style: {
+            width: "18rem",
+            flex: "1",
+            margin: "10px",
+            backgroundColor: "#e3f2fd"
           }
         }, /*#__PURE__*/_react.default.createElement("div", {
           className: "card-body"
@@ -95394,8 +95416,41 @@ var Categories = /*#__PURE__*/function (_Component) {
           onClick: function onClick(e) {
             return _this3.navigateRoomPage(e, item._id);
           }
-        }, "Go somewhere")));
-      })));
+        }, "Go somewhere")), /*#__PURE__*/_react.default.createElement("br", null));
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        style: {
+          display: 'flex',
+          flexDirection: 'row'
+        }
+      }, this.state.categories.length > 0 && this.state.categories.map(function (item, index) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          className: "card",
+          style: {
+            width: "18rem",
+            margin: "10px"
+          }
+        }, /*#__PURE__*/_react.default.createElement("img", {
+          src: _hotels.default,
+          className: "card-img-top",
+          alt: "..."
+        }), /*#__PURE__*/_react.default.createElement("div", {
+          className: "card-body"
+        }, /*#__PURE__*/_react.default.createElement("h5", {
+          className: "card-title"
+        }, item.name), /*#__PURE__*/_react.default.createElement("p", {
+          className: "card-text"
+        }, item.description), /*#__PURE__*/_react.default.createElement("a", {
+          href: "#",
+          className: "btn btn-primary",
+          onClick: function onClick(e) {
+            return _this3.navigateRoomPage(e, item._id);
+          }
+        }, "Show the allocated Rooms")));
+      })), /*#__PURE__*/_react.default.createElement("table", {
+        className: "table table-hover"
+      }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("th", null, "Category"), /*#__PURE__*/_react.default.createElement("th", null, "Description")), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.categories.length > 0 && this.state.categories.map(function (item, index) {
+        return /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", null, " ", item.name), /*#__PURE__*/_react.default.createElement("td", null, " ", item.description));
+      }))));
     }
   }]);
 
@@ -95404,7 +95459,7 @@ var Categories = /*#__PURE__*/function (_Component) {
 
 var _default = Categories;
 exports.default = _default;
-},{"axios":"node_modules/axios/index.js","./styles":"src/components/Categories/styles.js","react":"node_modules/react/index.js","@material-ui/core":"node_modules/@material-ui/core/esm/index.js"}],"src/components/CreateRoom/CreateRoom.js":[function(require,module,exports) {
+},{"axios":"node_modules/axios/index.js","./styles":"src/components/Categories/styles.js","react":"node_modules/react/index.js","./hotels.jpg":"src/components/Categories/hotels.jpg","@material-ui/core":"node_modules/@material-ui/core/esm/index.js"}],"src/components/CreateRoom/CreateRoom.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -98629,7 +98684,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64196" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52325" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

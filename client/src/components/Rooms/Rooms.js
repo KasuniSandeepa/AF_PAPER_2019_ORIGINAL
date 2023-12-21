@@ -82,7 +82,9 @@ class Rooms extends Component{
     render(){
         return(
             <div className="container">
-                <h1>All Rooms</h1>
+                <center><h1>All Rooms</h1></center>
+                <br/>
+                <label htmlFor="Code" className="form-label">Select Rooms for Calculate Cost :</label>
 
                 <Select
                     options={ this.state.options }
@@ -90,8 +92,11 @@ class Rooms extends Component{
                     className="basic-multi-select"
                     isMulti
                 />
+                <br/>
                 <button type="button" className="btn btn-primary" onClick={e => this.calculateCost(e)}>Calculate</button>
 
+
+                <br/>
                 {this.state.rooms.length > 0 && this.state.rooms.map((item,index) => (
                     <div key={index} className="card mb-3">
                         <div className="p-3">

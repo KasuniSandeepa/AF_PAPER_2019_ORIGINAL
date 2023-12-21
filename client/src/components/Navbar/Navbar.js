@@ -8,7 +8,7 @@ class Navbar extends Component{
     render(){
         return(
             <div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-primary">
+                <nav className="navbar navbar-expand-lg navbar-light" style={{backgroundColor:"#e3f2fd"}}>
                     <div className="container-fluid">
                         <a className="navbar-brand" href="#">Hotel AF</a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse"

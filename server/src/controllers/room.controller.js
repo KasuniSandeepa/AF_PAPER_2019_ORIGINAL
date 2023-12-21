@@ -12,10 +12,7 @@ const createRoom = async (req,res) => {
             .catch(error => {
                 res.status(500).send({ error: error.message });
             })
-
         console.log(req.body.selectedCategories);
-
-
     }
 }
 
@@ -40,10 +37,8 @@ const calculateTotalCost = async (req,res) => {
               totalAmount += roomAmount;
           })
       }
-
       console.log(totalAmount);
    }
-
     res.status(200).send({ totalAmount: totalAmount });
 }
 

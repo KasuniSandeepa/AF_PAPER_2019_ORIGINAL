@@ -1,7 +1,10 @@
 import axios from "axios";
 import useStyles from './styles';
 import React, { Component }from "react";
+import image from './hotels.jpg';
 import {Button, Card, CardMedia, Typography} from "@material-ui/core";
+
+
 
 class Categories extends Component{
     constructor(props) {
@@ -35,20 +38,24 @@ class Categories extends Component{
     render(){
         return(
             <div className="container">
-                <h1>Categories</h1>
-
+               <center><h1>Categories</h1></center>
+                <br/>
+                <div style={{ display: "flex", flexWrap: "wrap" }}>
                 {this.state.categories.length > 0 && this.state.categories.map((item,index) => (
-                    <div key={index} className="card mb-3">
+                    <div key={index} className="card mb-3" style={{margin: "10px" , backgroundColor:"#e3f2fd"}}>
                         <div className="p-3" onClick={e => this.navigateRoomPage(e, item._id)}>
                             <h4>Category: {item.name}</h4>
                             <h5>Description: {item.description}</h5>
                         </div>
-
+                        <span>&nbsp;&nbsp;&nbsp;</span>
                     </div>
+
                 ))}
-                <div style={{ display: "flex", flexWrap: "wrap" }}>
+
+                </div>
+                <div style={{display: 'flex', flexDirection: 'row'}}>
                 {this.state.categories.length > 0 && this.state.categories.map((item,index) => (
-                <div key={index} className="card text-white bg-info" style={{width: "18rem"}}>
+                <div key={index} className="card text-black " style={{width: "18rem" , flex: "1" , margin: "10px" , backgroundColor:"#e3f2fd"}}>
 
                         <div  className="card-body">
                             <h5 className="card-title">{item.name}</h5>
@@ -57,14 +64,39 @@ class Categories extends Component{
                             <a href="#" className="btn btn-primary" onClick={e => this.navigateRoomPage(e, item._id)}>Go somewhere</a>
                         </div>
 
-
+                    <br />
                 </div>
 
                 ))}
 
                 </div>
+                <div style={{display: 'flex', flexDirection: 'row'}}>
+                    {this.state.categories.length > 0 && this.state.categories.map((item,index) => (
+                <div className="card" style={{width: "18rem" ,  margin: "10px"}}>
+                    <img src={image} className="card-img-top" alt="..."/>
+                        <div className="card-body">
+                            <h5 className="card-title">{item.name}</h5>
+                            <p className="card-text">{item.description}</p>
+                            <a href="#" className="btn btn-primary" onClick={e => this.navigateRoomPage(e, item._id)}>Show the allocated Rooms</a>
+                        </div>
+                </div>
+                    ))}
+                </div>
 
-
+                <table className="table table-hover">
+                    <thead>
+                    <th>Category</th>
+                    <th>Description</th>
+                    </thead>
+                    <tbody>
+                    {this.state.categories.length > 0 && this.state.categories.map((item,index) => (
+                    <tr>
+                        <td> {item.name}</td>
+                        <td> {item.description}</td>
+                    </tr>
+                    ))}
+                    </tbody>
+                </table>
             </div>
         )
     }
